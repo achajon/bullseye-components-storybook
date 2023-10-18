@@ -6,7 +6,10 @@ const meta: Meta<typeof BullseyeBranding> = {
     component: BullseyeBranding,
     tags: ['autodocs'],
     title: 'BullseyeBranding',
-    argTypes: {
+    args:{
+        brandingImageURL:"http://picsum.photos/200/200", 
+        brandingTextURL:"#", 
+        brandingText:"This is my branding text" 
     }
 }
 
@@ -14,17 +17,9 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const args = {
-    brandingImageURL:"http://picsum.photos/200/200", 
-    brandingTextURL:"#", 
-    brandingText:"This is my branding text" 
-}
-
 export const BullseyeBrandingStorybook: Story = {
-    render: () => 
-        <div className={"card shadow-sm p-3 mt-3"}>
-            <BullseyeBranding 
-                {...args}
-            />
-        </div>    
+    render: (args, { globals: { showInCard } }) =>
+    <div className={showInCard === "Yes" ? "card shadow-sm p-3 mt-3" : ""}>
+        <BullseyeBranding {...args}/>
+    </div> 
 }
