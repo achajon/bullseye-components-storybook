@@ -34,7 +34,7 @@ const TwoTestimonialsArgs = {
 
 type Story = StoryObj<typeof meta>;
 
-export const SocialMediaIconsSample:Story = {
+export const testimonials:Story = {
     render: (args, { globals: { showInCard } }) => 
     <div className={showInCard === "Yes" ? "card shadow-sm p-3 mt-3" : ""}>
         <Testimonials {...TwoTestimonialsArgs}/>

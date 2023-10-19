@@ -6,7 +6,11 @@ const meta: Meta<typeof CompactEvent> = {
     component: CompactEvent,
     tags: ['autodocs'],
     title: 'CompactEvent',
-    argTypes: {
+    args: {
+        title :"This is my content title",
+        eventList:[{EventId:1,StartDate:"01/05/2022",EventTitle:"My Event 1"}],
+        eventMoreUrl:"#",
+        showLandingPageLinkTarget: "Link"
     }
 }
 
@@ -14,15 +18,16 @@ export default meta;
 
 type Story = StoryObj<typeof meta>;
 
-const cardWithImageArgs = {
-    title :"This is my content title",
-    eventList:[{EventId:1,StartDate:"01/05/2022",EventTitle:"My Event 1"}],
-    eventMoreUrl:"#"
-}
-
-export const CardWithImageStorybook: Story = {
+export const compactEvent: Story = {
     render: (args, { globals: { showInCard } }) => 
     <div className={showInCard === "Yes" ? "card shadow-sm p-3 mt-3" : ""}>
-        <CompactEvent {...cardWithImageArgs} />
+        <CompactEvent {...args} />
+    </div>
+}
+
+export const compactEventWithURL: Story = {
+    render: (args, { globals: { showInCard } }) => 
+    <div className={showInCard === "Yes" ? "card shadow-sm p-3 mt-3" : ""}>
+        <CompactEvent {...args} eventMoreUrl="https://www.bullseyelocations.com/"/>
     </div>
 }
