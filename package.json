@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "@storybook/addon-styling-webpack": "^0.0.5",
-    "components-bullseye": "^0.0.99",
+    "components-bullseye": "^0.0.105",
     "dotenv": "^16.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
